@@ -29,9 +29,11 @@ export class LoginPage implements OnInit {
   async login() {
     this.api.startLoader();
     const data = new FormData();
-    data.append('email', this.email);
+    // data.append('email', this.email);
+    // data.append('password', this.password);
 
-    data.append('password', this.password);
+    data.append('email', "binhlh@dcv.vn");
+    data.append('password', "123456");
     data.append('device_token', localStorage.getItem('pushToken'));
     this.api.postWithAuth('login', data).subscribe((res: any) => {
       console.log('res', res);

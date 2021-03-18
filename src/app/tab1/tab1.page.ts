@@ -27,8 +27,8 @@ export class Tab1Page {
   distanceTop: any = 219;
   search = '';
   space: Array<any> = [];
-  lat = 22.3039;
-  lng = 70.8022;
+  lat = 20.9758;
+  lng = 105.782;
 
   constructor(
     private api: ApiService,

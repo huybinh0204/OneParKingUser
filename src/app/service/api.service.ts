@@ -5,7 +5,7 @@ import { ToastController, LoadingController } from '@ionic/angular';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseURL = 'http://paypark.saasmonks.com/api/user/';
+  private baseURL = 'http://oneparking.dcv.vn/api/user/';
   public startTime: any;
   public APIGlobeSetting: any = {};
 
@@ -15,9 +15,11 @@ export class ApiService {
   constructor(private http: HttpClient, public toastController: ToastController, public loadingController: LoadingController) { }
 
   public postWithAuth(endPoint: string, data: any) {
+    console.log("postWithAuth",this.baseURL + endPoint);
     return this.http.post(`${this.baseURL}${endPoint}`, data);
   }
   public getWithAuth(endPoint: string) {
+    console.log("getWithAuth",this.baseURL + endPoint);
     return this.http.get(`${this.baseURL}${endPoint}`);
   }
   async presentToast(msg) {
@@ -33,6 +35,7 @@ export class ApiService {
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', tok);
     headers = headers.set('Accept', 'application/json');
+    console.log("authPostReq",this.baseURL + endPoint);
     return this.http.post(`${this.baseURL}${endPoint}`, data, { headers });
   }
   public authUpdateReq(endPoint: string, data: any) {
@@ -41,6 +44,7 @@ export class ApiService {
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', tok);
     headers = headers.set('Accept', 'application/json');
+    console.log("authUpdateReq",this.baseURL +endPoint);
     return this.http.put(`${this.baseURL}${endPoint}`, data, { headers });
   }
   public authDeleteReq(endPoint: string) {
@@ -49,6 +53,7 @@ export class ApiService {
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', tok);
     headers = headers.set('Accept', 'application/json');
+    console.log("authDeleteReq",this.baseURL +endPoint);
     return this.http.delete(`${this.baseURL}${endPoint}`, { headers });
   }
   public authGetReq(endPoint: string) {
@@ -56,6 +61,7 @@ export class ApiService {
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', tok);
     headers = headers.set('Accept', 'application/json');
+    console.log("authGetReq",this.baseURL +endPoint);
     return this.http.get(`${this.baseURL}${endPoint}`, { headers });
   }
   public forgotPsw(data) {

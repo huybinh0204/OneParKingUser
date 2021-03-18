@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "paypark",
+  "appName": "onepark",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

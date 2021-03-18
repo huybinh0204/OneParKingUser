@@ -46,8 +46,8 @@ export class ParkTimePage implements OnInit {
     console.log(" this.hours", this.hours);
     this.hours = Math.round(this.hours);
     const latLng = {
-      lat: 22.3039,
-      lng: 70.8022
+      lat : 20.9758,
+      lng : 105.782
     };
     this.api.postWithAuth(`space/${this.id}`, latLng).subscribe(
       (res: any) => {

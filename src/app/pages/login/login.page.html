@@ -1,14 +1,14 @@
 <ion-content>
     <div class="ion-text-center  logo_div">
-        <img src="assets/image/logo.png">
-        <h3 class="logo_text"><span>P</span>ay<span>P</span>ark</h3>
+<!--        <img src="assets/image/logo.png">-->
+        <h3 class="logo_text"><span>O</span>ne<span>P</span>ark</h3>
         <h3 class="signin">SIGN IN</h3>
     </div>
 
     <div class="div-form">
         <ion-item lines="none" class="item_div">
             <ion-label position="stacked" class="lbl_name">Email</ion-label>
-            <ion-input required type="text" [(ngModel)]="email" placeholder="JohnDeo@gmail.com"></ion-input>
+            <ion-input required type="text" [(ngModel)]="email" placeholder="email@gmail.com"></ion-input>
             <small color="danger" *ngIf="error.email">{{error.email['0']}}</small>
 
         </ion-item>
