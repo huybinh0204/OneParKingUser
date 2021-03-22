@@ -4,7 +4,7 @@
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
     <ion-title>
-      <span>P</span>ayPark
+      <span>O</span>nePark
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +17,7 @@
     </ion-refresher-content>
   </ion-refresher>
   <div class="data_div ion-margin-horizontal">
-    <p class="current">Current Booking</p>
+    <p class="current">Vé đặt trước</p>
     <div class="card_div" *ngFor="let item of currantBooking  |filter:search">
       <div class="info_div" (click)="openBooking(item.id)">
         <p class="name">{{item?.space?.title}} <span class="ion-float-right"> {{item?.created_at | date}}</span></p>
@@ -34,27 +34,27 @@
       <div class="success">
         <p class="msg">
           <ng-container *ngIf="item?.payment_status == '0' ">
-            Waiting For Payment
+            Đang chờ thanh toán
           </ng-container>
           <ng-container *ngIf="item?.payment_status == '1' ">
-            Payment successfully
+            Thanh toán thành công
           </ng-container>
           <ng-container *ngIf="item?.payment_status == '2' ">
-            Payment Rejected
+            Thanh toán bị từ chối
           </ng-container>
 
 
         </p>
         <ion-button class="ion-text-capitalize" color="danger" fill="outline" expand="full"
           (click)="cancelBooking(item.id)">
-          Cancel
+          Huỷ bỏ
         </ion-button>
       </div>
     </div>
     <div *ngIf="currantBooking.length < 1 ">
-      <h3 style="text-align: center;color: #7f97b1;">No Currant Booking Found :( </h3>
+      <h3 style="text-align: center;color: #7f97b1;">Không tìm thấy đặt trước Currant :( </h3>
     </div>
-    <p class="current">History</p>
+    <p class="current">Lịch sử</p>
     <div class="card_div" *ngFor="let item of oldBooking |filter:search">
       <div class="info_div" (click)="openBooking(item.id)">
         <p class="name">{{item?.space?.title}} <span class="ion-float-right"> {{item?.created_at | date}}</span></p>
@@ -71,24 +71,24 @@
       <div class="success">
         <p class="msg">
           <ng-container *ngIf="item?.payment_status == '0' ">
-            Waiting For Payment
+            Đang chờ thanh toán
           </ng-container>
           <ng-container *ngIf="item?.payment_status == '1' ">
-            Payment successfully
+            Thanh toán thành công
           </ng-container>
           <ng-container *ngIf="item?.payment_status == '2' ">
-            Payment Rejected
+            Thanh toán bị từ chối
           </ng-container>
           <ion-button class="trans-btn ion-text-capitalize ion-float-right ion-button-s">
 
 
-            <ng-container color="secondary" *ngIf="item?.status == '0'">Booked
+            <ng-container color="secondary" *ngIf="item?.status == '0'">Đã đặt trước
             </ng-container>
-            <ng-container color="tertiary" *ngIf="item?.status == '1'">In Parking
+            <ng-container color="tertiary" *ngIf="item?.status == '1'">Trong bãi đậu xe
             </ng-container>
-            <ng-container color="danger" *ngIf="item?.status == '3'">Cancel
+            <ng-container color="danger" *ngIf="item?.status == '3'">Huỷ bỏ
             </ng-container>
-            <ng-container color="success" *ngIf="item?.status == '2'">Complete
+            <ng-container color="success" *ngIf="item?.status == '2'">Hoàn thành
             </ng-container>
           </ion-button>
         </p>

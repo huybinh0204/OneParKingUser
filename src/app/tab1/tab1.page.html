@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-title>
-      <span>P</span>ayPark
+      <span>O</span>nePark
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -36,14 +36,14 @@
     </ion-list>
     <ion-row *ngIf="arriving">
       <ion-col class="first_col">
-        <h3 class="tittle">Arriving</h3>
+        <h3 class="tittle">Thời gian vào</h3>
         <!-- <p class="data">Nov 1, 10:00AM</p> -->
         <ion-datetime [min]="sort_data.start_dateMin" displayFormat="MMM D, hh:mm a" placeholder="Nov 1, 10:00AM"
           [(ngModel)]="sort_data.start_date" (ionChange)="dateChanged()"></ion-datetime>
 
       </ion-col>
       <ion-col>
-        <h3 class="tittle">Leaving</h3>
+        <h3 class="tittle">Thời gian ra</h3>
         <!-- <p class="data">Nov 1, 01:00PM</p> -->
         <ion-datetime [min]="sort_data.end_dateMin" placeholder="Nov 1, 01:00AM" pickerFormat="MMM D, hh:mm a"
           displayFormat="MMM D, hh:mm a" [(ngModel)]="sort_data.end_date">

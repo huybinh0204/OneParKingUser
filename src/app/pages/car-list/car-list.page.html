@@ -5,7 +5,7 @@
 
     </ion-buttons>
     <ion-title>
-      <span>P</span>ayPark
+      <span>O</span>nePark
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -21,7 +21,7 @@
     </ion-segment>
     <div [ngSwitch]="type">
       <div *ngSwitchCase="'vehicle'" class="vehicle_div">
-        <p class="first_p">Which vehicle you going to park?</p>
+        <p class="first_p">Bạn sẽ đỗ phương tiện nào?</p>
         <ion-radio-group>
 
           <ion-item-sliding *ngFor="let item of carData" #slidingItem>
@@ -65,6 +65,6 @@
 </ion-content>
 <ion-footer>
   <ion-button class="otp_btn" (click)="addCar()">
-    Add Car
+    Thêm xe
   </ion-button>
 </ion-footer>

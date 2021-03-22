@@ -32,7 +32,11 @@ export class Tab3Page {
   }
   ionViewDidEnter() {
     this.profileInitData();
-
+  }
+  formatmeny() {
+    const ds = this.profileData.current_money == 0 ? String(0) : String(this.profileData.current_money);
+    const d = ds.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return d;
   }
   setting() {
     this.ntrl.navigateForward(['setting']);
@@ -67,6 +71,10 @@ export class Tab3Page {
   }
   carList() {
     this.ntrl.navigateForward(['car-list']);
+  }
+  bankList() {
+    const  urls = 'http://oneparking.dcv.vn/payment/app-vnpay-checkout-url.html/' + this.profileData.id;
+    return urls;
   }
   privacyPolicy() {
     this.ntrl.navigateForward(['policy']);

@@ -28,40 +28,39 @@ export class LoginPage implements OnInit {
   }
   async login() {
     this.api.startLoader();
-    const data = new FormData();
-    // data.append('email', this.email);
-    // data.append('password', this.password);
-
-    data.append('email', "binhlh@dcv.vn");
-    data.append('password', "123456");
-    data.append('device_token', localStorage.getItem('pushToken'));
-    this.api.postWithAuth('login', data).subscribe((res: any) => {
-      console.log('res', res);
-      this.api.dismissLoader();
-
-      if (res.success === true) {
-        this.api.presentToast(res.msg);
-        localStorage.setItem('token', res.data.token);
+    // data.append('email', "binhlh@dcv.vn");
+    // data.append('password', "123456");
+    // data.append('device_token', localStorage.getItem('pushToken'));
+    this.api.WithAuth( {email: 'binhlh@dcv.vn', password: '123456'}).subscribe((res: any) => {
+      // alert(JSON.stringify(res));
+      // this.api.dismissLoader();
+      //
+      // if (res.success === true) {
+      //   this.api.presentToast(res.msg);
+      //   localStorage.setItem('token', res.data.token);
         this.ntrl.navigateForward(['tabs/home']);
-
-      } else {
-        this.api.presentToast(res.msg);
-        localStorage.setItem('email', this.email);
-
-        this.ntrl.navigateForward(['get-otp']);
-
-      }
+      //
+      // } else {
+      //   this.api.presentToast(res.msg);
+      //   localStorage.setItem('email', this.email);
+      //   this.ntrl.navigateForward(['get-otp']);
+      //
+      // }
     }, err => {
-      this.api.dismissLoader();
-      if (err.status === 401) {
-        console.log('err', err.statusText);
-        this.api.presentToast(err.statusText);
-      }
-      if (err.status === 422) {
-        this.error = err.error.errors;
-        console.log('err', this.error);
-        this.api.presentToast(err.error.message);
-      }
-    });
+      // this.ntrl.navigateForward(['tabs/home']);
+      console.log('err', err);
+      alert(JSON.stringify(err));
+      // this.api.dismissLoader();
+      // if (err.status === 401) {
+      //   console.log('err', err.statusText);
+      //   this.api.presentToast(err.statusText);
+      // }
+      // if (err.status === 422) {
+      //   this.error = err.error.errors;
+      //   console.log('err', this.error);
+      //   this.api.presentToast(err.error.message);
+      // }
+    }
+    );
   }
 }

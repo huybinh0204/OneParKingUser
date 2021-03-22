@@ -6,7 +6,7 @@
       </ion-button>
     </ion-buttons>
     <ion-title>
-      <span>P</span>ayPark
+      <span>O</span>nePark
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,32 +19,32 @@
       </div>
       <h3 class="status">
         <ng-container *ngIf="bookingData?.payment_status == '0' ">
-          Waiting For Payment
+          Đang chờ thanh toán
         </ng-container>
         <ng-container *ngIf="bookingData?.payment_status == '1' ">
-          Payment successfully
+          Thanh toán thành công
         </ng-container>
         <ng-container *ngIf="bookingData?.payment_status == '2' ">
-          Payment Rejected
+          Thanh toán bị từ chối
         </ng-container>
       </h3>
       <p class="id">ID No. {{bookingData?.order_no}}</p>
-      <ion-button shape="round" fill="outline" color="secondary" *ngIf="bookingData?.status == '0'">Booked
+      <ion-button shape="round" fill="outline" color="secondary" *ngIf="bookingData?.status == '0'">Đã đặt trước
       </ion-button>
-      <ion-button shape="round" fill="outline" color="tertiary" *ngIf="bookingData?.status == '1'">In Parking
+      <ion-button shape="round" fill="outline" color="tertiary" *ngIf="bookingData?.status == '1'">Trong bãi đậu xe
       </ion-button>
-      <ion-button shape="round" fill="outline" color="danger" *ngIf="bookingData?.status == '3'">Cancel
+      <ion-button shape="round" fill="outline" color="danger" *ngIf="bookingData?.status == '3'">Huỷ bỏ
       </ion-button>
-      <ion-button shape="round" fill="outline" color="success" *ngIf="bookingData?.status == '2'">Complete
+      <ion-button shape="round" fill="outline" color="success" *ngIf="bookingData?.status == '2'">Hoàn thành
       </ion-button>
       <ion-row>
         <ion-col>
-          <h3 class="time">Time</h3>
+          <h3 class="time">Thời gian</h3>
           <p class="start time">{{bookingData?.arriving_time |  date:'shortTime'  }} To
             {{bookingData?.leaving_time |  date:'shortTime'  }}</p>
         </ion-col>
         <ion-col>
-          <h3 class="time">Price</h3>
+          <h3 class="time">Giá tiền</h3>
           <p class="start time">${{bookingData?.total_amount}}</p>
         </ion-col>
       </ion-row>
@@ -69,7 +69,7 @@
             <!-- // <img src="assets/image/barcode.png" alt="" /> -->
           </div>
 
-          <p class="scan_p">Scan Barcode Here</p>
+          <p class="scan_p">Quét mã vạch tại đây</p>
           <!-- <div class="deetz --flex-row-j!sb">
             </div>  -->
 

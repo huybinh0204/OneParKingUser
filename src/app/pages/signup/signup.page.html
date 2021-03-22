@@ -2,7 +2,7 @@
     <div class="ion-text-center  logo_div">
         <img src="assets/image/logo.png">
         <h3 class="logo_text"><span>P</span>ay<span>P</span>ark</h3>
-        <h3 class="signin">SIGN UP</h3>
+        <h3 class="signin">ĐĂNG KÝ</h3>
     </div>
 
     <div class="form">
@@ -12,13 +12,13 @@
             <small color="danger" *ngIf="error.email">{{error.email['0']}}</small>
         </ion-item>
         <ion-item lines="none" class="item_div">
-            <ion-label position="stacked" class="lbl_name">Name</ion-label>
+            <ion-label position="stacked" class="lbl_name">Tên</ion-label>
             <ion-input required type="text" [(ngModel)]="modelData.name" placeholder="John Deo"></ion-input>
             <small color="danger" *ngIf="error.name">{{error.name['0']}}</small>
 
         </ion-item>
         <ion-item lines="none" class="item_div">
-            <ion-label position="stacked" class="lbl_name">Password</ion-label>
+            <ion-label position="stacked" class="lbl_name">Mật khẩu</ion-label>
             <ion-input required [(ngModel)]="modelData.password" type="Password" placeholder="*  *  *  *  *  *">
             </ion-input>
             <ion-button slot="end" class="trans-btn">
@@ -28,7 +28,7 @@
 
         </ion-item>
         <ion-item lines="none" class="item_div">
-            <ion-label position="stacked" class="lbl_name">Confirm Password</ion-label>
+            <ion-label position="stacked" class="lbl_name">Xác nhận mật khẩu</ion-label>
             <ion-input [(ngModel)]="modelData.password_confirmation" required type="Password"
                 placeholder="*  *  *  *  *  *">
             </ion-input>
@@ -38,7 +38,7 @@
         </ion-item>
 
         <ion-button class="otp_btn signin_btn" mode="md" expand="full" shape="round" fill="solid" (click)="register()">
-            Sign up
+            Đăng ký
         </ion-button>
     </div>
     <div class="or">
@@ -55,8 +55,8 @@
             <ion-icon name="logo-twitter"></ion-icon>
         </ion-button>
         <div class="account_div">
-            <span class="text">Need an Account?</span>
-            <ion-button class="trans-btn last_button" (click)="login()">Sign in</ion-button>
+            <span class="text">Đã có tài ?</span>
+            <ion-button class="trans-btn last_button" (click)="login()">Đăng nhập</ion-button>
         </div>
     </div>
 </ion-content>
