@@ -22,7 +22,7 @@ ion-content{
                 .name{
                     color: var(--ion-color-white);
                     font-size: 18px;
-                    font-family: 'Rubik_Medium';
+                    //font-family: 'Rubik_Medium';
                     margin-bottom: 0px;
                     span{
                         color: var(--ion-color-blue);
@@ -35,7 +35,7 @@ ion-content{
                         height: 27px;
                     }
                 }
-               
+
                 .dot_div{
                     padding-left: 5px;
                     display: flex;
@@ -52,7 +52,7 @@ ion-content{
                             margin-right: 5px;
                         }
                     }
-                  
+
 
                 }
                 ion-label{
@@ -60,21 +60,21 @@ ion-content{
                             font-size: 10px;
                             color: var(--ion-color-white);
                             padding-left: 5px;
-                            font-family: 'Helvetica-Neue';
+                            //font-family: 'Helvetica-Neue';
                     }
                     .format{
 
                             font-size: 8px;
                             color: var(--ion-color-darkblue);
                             padding-left: 5px;
-                            font-family: 'Helvetica-Neue';
+                            //font-family: 'Helvetica-Neue';
                     }
                 }
             }
              .col_div {
                 margin: 16px 0px 0px 0px;
                 .card_label {
-                    font-family: 'Helvetica-Neue';
+                    //font-family: 'Helvetica-Neue';
                     font-size: 11px;
                     color: var(--ion-color-white);
                 }
@@ -86,9 +86,9 @@ ion-content{
 
                 }
                 ion-input {
-            
+
                     font-size: 14px;
-                    font-family: 'Helvetica-Neue';
+                    //font-family: 'Helvetica-Neue';
                     --color: var(--ion-color-white);
                     margin-top: 5px;
                     margin-bottom: 10px;
@@ -112,7 +112,7 @@ ion-content{
                         width: 9px;
                     }
                 }
-             
+
             }
     }
 }

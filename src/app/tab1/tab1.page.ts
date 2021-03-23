@@ -295,7 +295,7 @@ export class Tab1Page {
                     });
                     const spaceInfo =
                         '<div class="simple">' +
-                        '<p style = "margin-right: 5px;margin-left: 5px;">' +
+                        '<p style = "margin: 0 5px 0 5px">' +
                         element.price_par_hour +
                         'VNĐ/giờ</p>' +
                         '</div>';
@@ -431,18 +431,9 @@ export class Tab1Page {
             // this.api.presentToast('Please Select Start and End Time');
         }
     }
-    format2(n, currency) {
-        return currency + n.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
-    }
 
-    // formatter(meny) {
-    //     console.log("22",meny)
-    //     for (var i = 0; i < meny.length; i++) {
-    //         // @ts-ignore
-    //         return format2(meny[i]);
-    //     }
-    //     return meny;
-    // }
+    formatter(meny) {
+    }
 
     formatedEndDate(date: Date) {
         const formatedMonth = date.getMonth() + 1 > 9 ? date.getMonth() + 1 : '0' + (date.getMonth() + 1);

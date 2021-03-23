@@ -101,15 +101,15 @@ export class ParkingDetailPage implements OnInit {
       );
 
     } catch (error) {
-      console.error('error', error)
+      console.error('error', error);
 
     }
 
     this.id = this.activeRoute.snapshot.paramMap.get('id');
-    this.startTime = this.api.startTime || new Date()
-    this.endTime = this.api.endTime || new Date()
+    this.startTime = this.api.startTime || new Date();
+    this.endTime = this.api.endTime || new Date();
     this.hours = Math.abs(this.startTime - this.endTime) / 36e5;
-    console.log(' this.hours', this.hours)
+    console.log(' this.hours', this.hours);
     this.hours = Math.round(this.hours);
     let latLng = {
       lat : 20.9758,
@@ -121,7 +121,8 @@ export class ParkingDetailPage implements OnInit {
         lng: data.coords.longitude
       };
     } else {
-      this.api.presentToast('Please Turn your location')
+      console.log('Please Turn your location');
+      // this.api.presentToast('Please Turn your location')
     }
 
     this.api.postWithAuth(`space/${this.id}`, latLng).subscribe((res: any) => {

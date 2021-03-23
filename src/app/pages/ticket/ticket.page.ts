@@ -20,9 +20,9 @@ export class TicketPage implements OnInit {
       name: 'Chris Sullivan Parking',
       adress: '190 High St East, Rawa Barat,UK'
     }
-  }
+  };
   id: string;
-  bookingData: any = {}
+  bookingData: any = {};
   constructor(private api: ApiService, public activeRoute: ActivatedRoute, private ntrl: NavController
   ) {
   }
@@ -31,23 +31,23 @@ export class TicketPage implements OnInit {
     this.api.startLoader();
 
     this.id = this.activeRoute.snapshot.paramMap.get('id');
-    console.log('this.id', this.id)
+    console.log('this.id', this.id);
     this.api.authGetReq('booking/' + this.id).subscribe((res: any) => {
-      console.log('res', res)
+      console.log('res bookingData', res);
       this.bookingData = res.data;
-      this.api.dismissLoader()
+      this.api.dismissLoader();
 
     }, err => {
-      console.error('err', err)
-      this.api.dismissLoader()
+      console.error('err', err);
+      this.api.dismissLoader();
 
-    })
+    });
   }
   rateNow() {
-    this.ntrl.navigateForward('review/' + this.bookingData.space_id)
+    this.ntrl.navigateForward('review/' + this.bookingData.space_id);
   }
   navBooking() {
-    this.ntrl.navigateRoot('/tabs/mybooking')
+    this.ntrl.navigateRoot('/tabs/mybooking');
 
   }
 

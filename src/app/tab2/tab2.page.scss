@@ -1,7 +1,7 @@
 ion-content {
     .current {
         font-size: 14px;
-        font-family: 'Rubik_Medium';
+        //font-family: 'Rubik_Medium';
         color: var(--ion-color-darkblue);
         margin-top: 20px;
     }
@@ -18,14 +18,14 @@ ion-content {
 
             .name {
                 font-size: 14px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 color: var(--ion-color-darkblue);
                 margin-bottom: 5px;
             }
 
             .time {
                 font-size: 12px;
-                font-family: 'Rubik_Regular';
+                //font-family: 'Rubik_Regular';
                 color: var(--ion-color-sky);
                 margin: 0px;
 
@@ -40,7 +40,7 @@ ion-content {
 
             .id {
                 font-size: 12px;
-                font-family: 'Rubik_Regular';
+                //font-family: 'Rubik_Regular';
                 color: var(--ion-color-sky);
                 margin-bottom: 5px;
                 margin-top: 0px;
@@ -60,7 +60,7 @@ ion-content {
                 margin-left: 15px;
                 margin-right: 15px;
                 font-size: 12px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 color: var(--ion-color-blue);
 
                 ion-icon {

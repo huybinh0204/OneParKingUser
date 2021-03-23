@@ -17,15 +17,15 @@ ion-content{
             padding: 0px 15px;
               .main_tittle{
                      font-size: 20px;
-                     font-family: 'Rubik_Medium';
+                     //font-family: 'Rubik_Medium';
                      color: var(--ion-color-black);
                  }
-            }  
+            }
         .item_row{
             .text{
                margin-left: 10px;
                margin-right: 10px;
-               font-family: 'Rubik_Medium';
+               //font-family: 'Rubik_Medium';
                font-size: 20px;
                color: var(--ion-color-black);
            }
@@ -34,19 +34,19 @@ ion-content{
                font-size: 19px;
                --placeholder-color:var(--ion-color-checkb);
                --placeholder-opacity:1;
-               font-family: 'Rubik_Medium';
+               //font-family: 'Rubik_Medium';
            }
-   
+
        }
        .detail_p{
         color:var(--ion-color-checkb);
         font-size: 16px;
-        font-family: 'Rubik_Regular';
+        //font-family: 'Rubik_Regular';
         margin-left: 25px;
         margin-right: 25px;
         margin-top: 40px;
         margin-bottom: 50px;
-        
+
     }
-    }  
+    }
 }

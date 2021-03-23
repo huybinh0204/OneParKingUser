@@ -9,7 +9,7 @@ ion-content {
 
         .logo_text {
             font-size: 50px;
-            font-family: 'Rubik_Medium_I';
+            //font-family: 'Rubik_Medium_I';
             color: var(--ion-color-darkblue);
             margin-top: 10px;
 
@@ -21,12 +21,12 @@ ion-content {
 
         .signin {
             font-size: 25px;
-            font-family: 'WorkSans_Bold';
+            //font-family: 'WorkSans_Bold';
             color: var(--ion-color-darkblue);
         }
         .titles {
             font-size: 25px;
-            font-family: 'WorkSans_Bold';
+            //font-family: 'WorkSans_Bold';
             color: var(--ion-color-darkblue);
         }
         .img {
@@ -51,7 +51,7 @@ ion-content {
             .lbl_name {
                 font-size: 20px;
                 color: var(--ion-color-darkblue);
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 margin-bottom: 5px;
                 margin-top: 5px;
                 font-weight: 600;
@@ -62,7 +62,7 @@ ion-content {
                 --placeholder-font-style: 'Rubik_Regular';
                 --placeholder-opacity: 1;
                 font-size: 16px;
-                font-family: 'Rubik_Regular';
+                //font-family: 'Rubik_Regular';
             }
 
             .trans-btn {
@@ -91,14 +91,14 @@ ion-content {
 
                 .remember {
                     font-size: 14px;
-                    font-family: 'Rubik_Regular';
+                    //font-family: 'Rubik_Regular';
                     color: var(--ion-color-placeholder);
                 }
             }
 
             .forgot-btn {
                 font-size: 14px;
-                font-family: 'Rubik_Regular';
+                //font-family: 'Rubik_Regular';
                 --color: var(--ion-color-black);
             }
 
@@ -114,7 +114,7 @@ ion-content {
     .or {
         h2 {
             font-size: 18px;
-            font-family: 'WorkSans_Medium';
+            //font-family: 'WorkSans_Medium';
             color: var(--ion-color-gray);
             margin-top: 30px;
             text-align: center;
@@ -271,14 +271,14 @@ ion-content {
             .last_button {
                 --color: var(--ion-color-darkblue);
                 font-size: 16px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 text-transform: capitalize;
                 margin-left: 4px;
             }
 
             .text {
                 font-size: 16px;
-                font-family: 'Rubik_Regular';
+                //font-family: 'Rubik_Regular';
                 color: var(--ion-color-darkblue);
             }
         }

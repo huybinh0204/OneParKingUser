@@ -12,19 +12,19 @@ ion-content{
         border-top: dashed 1px var(--ion-color-sky);
         border-bottom: dashed 1px var(--ion-color-sky);
         margin-top: 15px;
-      
+
         ion-col{
-    
+
             .tittle{
                 font-size: 14px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 color: var(--ion-color-darkblue);
                 text-align: center;
                 margin-bottom: 0px;
             }
             .data{
                 font-size: 14px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 color: var(--ion-color-blue);
                 text-align: center;
                 margin-top: 8px;
@@ -35,21 +35,21 @@ ion-content{
             border-right: dashed 1px var(--ion-color-sky);
         }
     }
- 
+
   .detail_div{
       margin-bottom: 15px;
       .info_div{
           padding: 10px 0px;
           .name{
               font-size: 16px;
-              font-family: 'Rubik_Medium';
+              //font-family: 'Rubik_Medium';
               color: var(--ion-color-blue);
           }
           .location{
               font-size: 12px;
               margin-top: 5px;
               margin-bottom: 7px;
-              font-family: 'Rubik_Medium';
+              //font-family: 'Rubik_Medium';
               color: var(--ion-color-darkblue);
               .icon_color{
                   color: var(--ion-color-yellow);
@@ -62,7 +62,7 @@ ion-content{
               }
               .text{
                   color: var(--ion-color-checkb);
-                  font-family: 'Rubik_Regular';
+                  //font-family: 'Rubik_Regular';
               }
           }
       }
@@ -75,14 +75,14 @@ ion-content{
               width: 25%;
               .distance{
                 font-size: 14px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 color: var(--ion-color-darkblue);
                 text-align: center;
                 margin-bottom: 0px;
               }
               .detail_p{
                 margin-top: 5px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 color: var(--ion-color-darkblue);
                 font-size: 10px;
                 text-align: center;
@@ -101,7 +101,7 @@ ion-content{
           }
       }
       .segment_div{
-     
+
           ion-segment{
               padding: 10px;
             ion-segment-button{
@@ -111,7 +111,7 @@ ion-content{
                 --indicator-color-checked:var(--ion-color-blue);
                 ion-label{
                     font-size: 12px;
-                    font-family: 'Rubik_Medium';
+                    //font-family: 'Rubik_Medium';
                     text-transform: capitalize;
                 }
             }
@@ -121,7 +121,7 @@ ion-content{
                   position: relative;
                   .lorem_p{
                       font-size: 10px;
-                      font-family: 'Rubik_Regular';
+                      //font-family: 'Rubik_Regular';
                       color: var(--ion-light-gray);
                       text-align: center;
                       margin-bottom: 20px;
@@ -135,13 +135,13 @@ ion-content{
                     position: absolute;
                     bottom: 0;
                     font-size: 14px;
-                    font-family: 'Rubik_Medium';
+                    //font-family: 'Rubik_Medium';
                     color: var(--ion-color-white);
                     background-color: rgba(0, 0, 0, 0.5);
                     width: 100%;
                     margin-bottom: 4px;
                     border-radius: 0px 0px 5px 5px;
-                    padding: 5px 10px; 
+                    padding: 5px 10px;
                     text-align: end;
                     ion-icon{
                         margin-right: 5px;
@@ -156,15 +156,15 @@ ion-content{
                   align-items: center;
                   .img_div{
                       width: 25%;
-                   
+
                       .service_p{
                           font-size: 14px;
-                          font-family: 'Rubik_Medium';
+                          //font-family: 'Rubik_Medium';
                           color: var(--ion-color-darkblue);
                           text-align: center;
                           width: 60%;
                           margin: auto;
-                      
+
                       }
                       .img_info{
                           display: flex;
@@ -193,7 +193,7 @@ ion-content{
                     padding-left: 7px;
                     .name{
                         font-size: 14px;
-                        font-family: 'Rubik_Medium';
+                        //font-family: 'Rubik_Medium';
                         color: var(--ion-color-darkblue);
                         margin: 0px;
                     }
@@ -215,7 +215,7 @@ ion-content{
                     }
                    .about{
                        font-size: 12px;
-                       font-family: 'Rubik_Regular';    
+                       //font-family: 'Rubik_Regular';
                        color: var( --ion-color-sky);
                        margin-bottom: 0px;
                        margin-top: 3px;
@@ -233,7 +233,7 @@ ion-content{
                       margin: 0px;
                       width: 100%;
                       font-size: 14px;
-                      font-family: 'Rubik_Medium';
+                      //font-family: 'Rubik_Medium';
                       color: var(--ion-color-darkblue);
                       ion-icon{
                           color: var(--ion-color-blue);

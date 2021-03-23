@@ -5,13 +5,13 @@ ion-content{
         margin-bottom: 15px;
         .tittle{
             font-size: 16px;
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-darkblue);
 
         }
     }
     ion-item {
-    
+
         ion-radio {
             margin-right: 18px;
             margin-left: 0px;
@@ -19,7 +19,7 @@ ion-content{
         }
         ion-label {
             font-size: 14px;
-            font-family: 'Rubik_Regular';
+            //font-family: 'Rubik_Regular';
             color: var(--ion-color-sky)
         }
     }
@@ -27,7 +27,7 @@ ion-content{
         .text{
             font-size: 14px;
             color: var(--ion-color-darkblue);
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
         }
         ion-textarea{
             border-radius: 5px;

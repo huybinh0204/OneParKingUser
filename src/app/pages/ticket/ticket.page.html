@@ -1,95 +1,113 @@
 <ion-header no-border>
-  <ion-toolbar>
-    <ion-buttons>
-      <ion-button (click)="navBooking()">
-        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>
-      <img style="width: 100px;margin-top: 10px" src="assets/image/name_logo.png">
-<!--      <span>O</span>nePark-->
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons>
+            <ion-button (click)="navBooking()">
+                <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>
+            <img style="width: 100px;margin-top: 10px" src="assets/image/name_logo.png">
+            <!--      <span>O</span>nePark-->
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="main_div ion-margin-horizontal">
-    <div class="payment_div">
-      <div class="icon_div">
-        <img src="assets/image/ticket.png">
-      </div>
-      <h3 class="status">
-        <ng-container *ngIf="bookingData?.payment_status == '0' ">
-          Đang chờ thanh toán
-        </ng-container>
-        <ng-container *ngIf="bookingData?.payment_status == '1' ">
-          Thanh toán thành công
-        </ng-container>
-        <ng-container *ngIf="bookingData?.payment_status == '2' ">
-          Thanh toán bị từ chối
-        </ng-container>
-      </h3>
-      <p class="id">ID No. {{bookingData?.order_no}}</p>
-      <ion-button shape="round" fill="outline" color="secondary" *ngIf="bookingData?.status == '0'">Đã đặt trước
-      </ion-button>
-      <ion-button shape="round" fill="outline" color="tertiary" *ngIf="bookingData?.status == '1'">Trong bãi đậu xe
-      </ion-button>
-      <ion-button shape="round" fill="outline" color="danger" *ngIf="bookingData?.status == '3'">Huỷ bỏ
-      </ion-button>
-      <ion-button shape="round" fill="outline" color="success" *ngIf="bookingData?.status == '2'">Hoàn thành
-      </ion-button>
-      <ion-row>
-        <ion-col>
-          <h3 class="time">Thời gian</h3>
-          <p class="start time">{{bookingData?.arriving_time |  date:'shortTime'  }} To
-            {{bookingData?.leaving_time |  date:'shortTime'  }}</p>
-        </ion-col>
-        <ion-col>
-          <h3 class="time">Giá tiền</h3>
-          <p class="start time">${{bookingData?.total_amount}}</p>
-        </ion-col>
-      </ion-row>
+    <div class="main_div ion-margin-horizontal">
+        <div class="payment_div">
+            <div class="icon_div">
+                <img src="assets/image/ticket.png">
+            </div>
+            <h3 class="status">
+                <ng-container *ngIf="bookingData?.payment_status == '0' ">
+                    Đang chờ thanh toán
+                </ng-container>
+                <ng-container *ngIf="bookingData?.payment_status == '1' ">
+                    Thanh toán thành công
+                </ng-container>
+                <ng-container *ngIf="bookingData?.payment_status == '2' ">
+                    Thanh toán bị từ chối
+                </ng-container>
+            </h3>
+            <p class="id">ID No. {{bookingData?.order_no}}</p>
+            <ion-button shape="round" fill="outline" color="secondary" *ngIf="bookingData?.status == '0'">Đã đặt trước
+            </ion-button>
+            <ion-button shape="round" fill="outline" color="tertiary" *ngIf="bookingData?.status == '1'">Trong bãi đậu
+                xe
+            </ion-button>
+            <ion-button shape="round" fill="outline" color="danger" *ngIf="bookingData?.status == '3'">Huỷ bỏ
+            </ion-button>
+            <ion-button shape="round" fill="outline" color="success" *ngIf="bookingData?.status == '2'">Hoàn thành
+            </ion-button>
+            <ion-row>
+                <ion-col>
+                    <h3 class="time">Thời gian dự kiến</h3>
+                    <div>
+                        <p class="start time">Từ {{bookingData?.arriving_time |  date:'HH:mm dd-MM'}}</p>
+                        <p class="start time"> Đến {{bookingData?.leaving_time |  date:'HH:mm dd-MM'  }}</p>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <h3 class="time">Giá tiền</h3>
+                    <p class="start time">{{bookingData?.total_amount}} VNĐ</p>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="bookingData.checked_in_at">
+                <ion-col>
+                    <h3 class="time">Thời gian Thực tế</h3>
+                    <div>
+                        <p class="start time">Từ {{bookingData?.checked_in_at |  date:'HH:mm dd-MM'}}</p>
+                        <p class="start time"> Đến {{bookingData?.checked_out_at |  date:'HH:mm dd-MM'  }}</p>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <h3 class="time">Giá tiền</h3>
+                    <p class="start time">{{bookingData?.total_payment}} VNĐ</p>
+                </ion-col>
+
+            </ion-row>
+        </div>
+        <!-- <div class="barcode_div">
+          <img [src]="data?.ticket?.barcodeImg">
+          <p class="scan_p">Scan Barcode Here</p>
+          <div class="addres_div">
+              <h3 class="name">{{data?.ticket?.name}}</h3>
+              <p class="adress">{{data?.ticket?.adress}}</p>
+            </div>
+            <div class="div_img">
+                <img src="assets/image/right-arrow.png">
+              </div>
+        </div> -->
+        <div class="sample">
+            <div type="ticket" class="--flex-column">
+                <div class="top --flex-column">
+                    <div class="img_div">
+                        <qrcode colordark="#003165" [qrdata]="bookingData?.order_no || 'No Data'" [size]="132"
+                                [level]="'M'">
+                        </qrcode>
+                        <!-- // <img src="assets/image/barcode.png" alt="" /> -->
+                    </div>
+
+                    <p class="scan_p">Quét mã vạch tại đây</p>
+                    <!-- <div class="deetz --flex-row-j!sb">
+                      </div>  -->
+
+                </div>
+                <div class="rip"></div>
+                <div class="bottom --flex-row-j!sb">
+                    <h3 class="name">{{bookingData?.space?.title}}</h3>
+                    <p class="adress">{{bookingData?.space?.address}}</p>
+                    <div class="div_img">
+                        <img src="assets/image/right-arrow.png">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <h4 *ngIf="bookingData?.status == '3' || bookingData?.status == '2'" (click)="rateNow()"
+            style="color: red;font-weight: bolder;text-align: center;margin-top: 55px;">Rate & Review
+        </h4>
+
     </div>
-    <!-- <div class="barcode_div">
-      <img [src]="data?.ticket?.barcodeImg">
-      <p class="scan_p">Scan Barcode Here</p>
-      <div class="addres_div">
-          <h3 class="name">{{data?.ticket?.name}}</h3>
-          <p class="adress">{{data?.ticket?.adress}}</p>
-        </div>
-        <div class="div_img">
-            <img src="assets/image/right-arrow.png">
-          </div>
-    </div> -->
-    <div class="sample">
-      <div type="ticket" class="--flex-column">
-        <div class="top --flex-column">
-          <div class="img_div">
-            <qrcode colordark="#003165" [qrdata]="bookingData?.order_no || 'No Data'" [size]="132" [level]="'M'">
-            </qrcode>
-            <!-- // <img src="assets/image/barcode.png" alt="" /> -->
-          </div>
-
-          <p class="scan_p">Quét mã vạch tại đây</p>
-          <!-- <div class="deetz --flex-row-j!sb">
-            </div>  -->
-
-        </div>
-        <div class="rip"></div>
-        <div class="bottom --flex-row-j!sb">
-          <h3 class="name">{{bookingData?.space?.title}}</h3>
-          <p class="adress">{{bookingData?.space?.address}}</p>
-          <div class="div_img">
-            <img src="assets/image/right-arrow.png">
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <h4 *ngIf="bookingData?.status == '3' || bookingData?.status == '2'" (click)="rateNow()"
-      style="color: red;font-weight: bolder;text-align: center;margin-top: 55px;">Rate & Review
-    </h4>
-
-  </div>
 </ion-content>

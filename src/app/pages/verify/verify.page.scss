@@ -27,14 +27,14 @@ ion-content{
         padding: 0px 15px;
         .main_tittle{
             font-size: 20px;
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-black);
         }
     }
     .detail_p{
         color:var(--ion-color-checkb);
         font-size: 16px;
-        font-family: 'Rubik_Regular';
+        //font-family: 'Rubik_Regular';
         margin-left: 25px;
         margin-right: 25px;
         margin-top: 10px;
@@ -69,7 +69,7 @@ ion-content{
              --color:var(--ion-color-black);
              --ripple-color: transparent;
              --color-activated: var(--ion-color-black);
-             font-family: 'Rubik_Medium';
+             //font-family: 'Rubik_Medium';
          }
          margin-right: 40px;
      }

@@ -8,7 +8,7 @@ ion-content{
         background-image: url("../../../assets/image/back-img.png");
         .tittle{
             font-size: 20px;
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-darkblue);
         }
         .star_p{
@@ -23,12 +23,12 @@ ion-content{
             .icon_default{
                 color: var(--ion-color-star);
             }
-        }        
+        }
     }
     .write{
         .heading{
             font-size: 16px;
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-darkblue);
         }
         ion-textarea{
@@ -36,7 +36,7 @@ ion-content{
             box-shadow: 0px 2px 6px 0px rgba(52,150,255,0.16);
             padding: 10px;
             font-size: 14px;
-            font-family: 'Rubik_Regular';
+            //font-family: 'Rubik_Regular';
             color: var(--ion-color-sky);
             line-height: 20px;
         }

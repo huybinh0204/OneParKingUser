@@ -30,7 +30,7 @@ export class SignupPage implements OnInit {
       this.api.dismissLoader();
 
       if (res.success === true) {
-        this.api.presentToast(res.msg)
+        this.api.presentToast(res.msg);
 
         if (res.nextStep === 'home') {
           localStorage.setItem('token', res.data.token)

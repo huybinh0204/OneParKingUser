@@ -3,13 +3,13 @@ ion-content{
         text-align: center;
         .text{
             font-size: 14px;
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-darkblue);
             margin-bottom: 0px;
         }
         .time_p{
             font-size: 30px;
-            font-family: 'Changa-Medium';
+            //font-family: 'Changa-Medium';
             color:var(--ion-color-blue);
             margin-top: 0px;
             margin-bottom: 10px;
@@ -22,7 +22,7 @@ ion-content{
             justify-content: center;
             .quest_p{
                 font-size: 16px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 color: var(--ion-color-darkblue);
                 text-transform: uppercase;
                 text-align: center;
@@ -30,11 +30,11 @@ ion-content{
         }
         .choose_time{
             font-size: 16px;
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-blue);
             margin-bottom: 90px;
         }
-       
+
     }
     .total_div{
         height: 60px;
@@ -43,7 +43,7 @@ ion-content{
         align-items: center;
         .total_p{
             font-size: 16px;
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-darkblue);
             width:100%;
             padding: 0px 16px;
@@ -52,15 +52,15 @@ ion-content{
             }
         }
     }
-   
+
     .last_div{
         .card_h{
             font-size: 16px;
-            font-family: 'Rubik_Medium';
+            //font-family: 'Rubik_Medium';
             color: var(--ion-color-blue);
         }
         .last_item{
-            --border-color:var(--ion-color-blue);	
+            --border-color:var(--ion-color-blue);
             --border-radius:5px;
             --border-style:solid;
             --border-width:1px;
@@ -73,10 +73,10 @@ ion-content{
             }
             ion-input{
                 font-size: 12px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                 color: var(--ion-color-darkblue);
             }
         }
-     
+
     }
 }

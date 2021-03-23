@@ -19,11 +19,11 @@
   <ion-row>
     <ion-col class="first_col">
       <h3 class="tittle">Thời gian đến</h3>
-      <p class="data">{{startTime | date:'MMM dd HH:mm' }}</p>
+      <p class="data">{{startTime | date:'dd-MM, HH:mm' }}</p>
     </ion-col>
     <ion-col>
       <h3 class="tittle">Thời gian đi</h3>
-      <p class="data">{{endTime | date:'MMM dd HH:mm' }}</p>
+      <p class="data">{{endTime | date:'dd-MM, HH:mm' }}</p>
 
     </ion-col>
   </ion-row>
@@ -86,7 +86,7 @@
         </div>
       </div>
       <div class="distance_div">
-        <h3 class="distance">${{hours * spaceData.price_par_hour}}</h3>
+        <h3 class="distance">{{hours * spaceData.price_par_hour}}</h3>
         <p class="detail_p">Tổng tiền</p>
       </div>
     </div>

@@ -44,6 +44,13 @@ export class AppComponent {
     });
 
   }
+  getDateTime() {
+    // const days = new Date();
+    // let month = days.getMonth() + 1 ;
+    // let is_date = days.getMonth() + 1;
+    //
+    // console.log('2222', days.getDate() + "-" + days.getMonth() + days.getFullYear() + " " + days.getHours() + ":" + );
+  }
 
   private onesignalInit(onseSignalAppId, googleProjectId) {
 
