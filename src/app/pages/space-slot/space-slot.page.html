@@ -65,8 +65,7 @@
 
               </ng-container>
               <ng-container *ngIf="slot.booked != 1">
-
-                <h2 *ngIf="whereMyCar !== slot.id" [ngClass]="{'disable': slot.available == false  }">{{slot.name}}</h2>
+                <h2 class="red-color" *ngIf="whereMyCar !== slot.id" [ngClass]="{'red-color': slot.available == false  }">{{slot.name}}</h2>
                 <img *ngIf="whereMyCar === slot.id" src=" assets/car/myCar.png" alt="" srcset="" style="width: 35%;"
                   class="rotate-90">
               </ng-container>

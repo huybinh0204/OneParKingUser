@@ -65,6 +65,7 @@ export class ApiService {
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', tok);
     headers = headers.set('Accept', 'application/json');
+    console.log("authGetReq",tok);
     console.log("authGetReq",this.baseURL +endPoint);
     return this.http.get(`${this.baseURL}${endPoint}`, { headers });
   }
@@ -73,8 +74,8 @@ export class ApiService {
   }
   async startLoader() {
     this.loadingController.create({
-      duration: 10000,
-      message: `Please Wait`,
+      duration: 1000,
+      message: ``,
     }).then(a => {
       a.present().then(() => {
       });
