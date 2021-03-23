@@ -7,7 +7,10 @@
       <!-- </ion-icon> -->
 
     </ion-buttons>
-    <ion-title><span>O</span>nePark</ion-title>
+    <ion-title>
+      <img style="width: 100px;margin-top: 10px" src="assets/image/name_logo.png">
+<!--      <span>O</span>nePark-->
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -54,16 +57,15 @@
     <ion-item>
       <ion-label class="arriving" style="width: fit-content;">
         <ng-container *ngIf="defaultVehicle.model">
-
-          {{defaultVehicle.model + defaultVehicle.vehicle_no }}
+          {{"Phương tiện"}}
         </ng-container>
         <ng-container *ngIf="!defaultVehicle.model">
-          Vui lòng chọn phương tiện
+          Phương tiện
         </ng-container>
       </ion-label>
       <ion-select [(ngModel)]="selectedVehicle" okText="Ok" cancelText="Huy"
         (ionChange)="getDefaultVehicleById()">
-        <ion-select-option [value]="item.id" *ngFor="let item of vehicle">{{item.model}}</ion-select-option>
+        <ion-select-option [value]="item.id" *ngFor="let item of vehicle">{{item.vehicle_no + " " + item.brand }}</ion-select-option>
       </ion-select>
     </ion-item>
 
@@ -83,23 +85,24 @@
     color: #3496ff;
     font-weight: bolder;
     padding: 20px;" [ngClass]="{'shop': paymentMode === 'shop'}">
-            AT PARKING
+            Đặt chỗ
           </ion-card>
 
         </ion-col>
-<!--        <ion-col size="6" (click)="paymentMode = 'stripe'">-->
-<!--          <ion-card [ngClass]="{'stripe': paymentMode === 'stripe'}">-->
-<!--            <div>-->
-<!--              <img src="https://woocommerce.com/wp-content/uploads/2011/12/stripe-logo-blue.png" alt="" srcset="">-->
-<!--            </div>-->
-<!--          </ion-card>-->
-<!--        </ion-col>-->
+<!--&lt;!&ndash;        <ion-col size="6" (click)="paymentMode = 'stripe'">&ndash;&gt;-->
+<!--&lt;!&ndash;          <ion-card [ngClass]="{'stripe': paymentMode === 'stripe'}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div>&ndash;&gt;-->
+<!--&lt;!&ndash;              <img src="https://woocommerce.com/wp-content/uploads/2011/12/stripe-logo-blue.png" alt="" srcset="">&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          </ion-card>&ndash;&gt;-->
+<!--&lt;!&ndash;        </ion-col>&ndash;&gt;-->
       </ion-row>
     </ion-grid>
   </div>
 </ion-content>
 <ion-footer>
   <ion-button class="otp_btn" (click)="bookParking()">
-    Pay ${{hours * spaceData.price_par_hour}}
+    Đặt chỗ
+<!--    {{hours * spaceData.price_par_hour}} đ-->
   </ion-button>
 </ion-footer>

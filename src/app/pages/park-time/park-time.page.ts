@@ -117,6 +117,7 @@ export class ParkTimePage implements OnInit {
     });
   }
   bookParking() {
+    // this.paymentMode = 0;
     if (!this.selectedVehicle || !this.paymentMode) {
       this.api.presentToast("Please select vehicle and payment method");
       return;

@@ -18,6 +18,10 @@ export class ApiService {
     console.log("postWithAuth",this.baseURL + endPoint);
     return this.http.post(`${this.baseURL}${endPoint}`, data);
   }
+  public WithAuth(data: any) {
+    console.log("dataWithAuth",data);
+    return this.http.post(`http://oneparking.dcv.vn/api/user/login`, data);
+  }
   public getWithAuth(endPoint: string) {
     console.log("getWithAuth",this.baseURL + endPoint);
     return this.http.get(`${this.baseURL}${endPoint}`);

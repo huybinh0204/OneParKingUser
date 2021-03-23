@@ -10,26 +10,23 @@
 <ion-content fullscreen>
   <div class="main_div ion-margin-horizontal">
 
-    <p class="question">Search for your vehicle brand </p>
+    <p class="question">Nhãn hiệu</p>
     <ion-item>
-      <ion-input placeholder="Brand ?" [(ngModel)]="carData.brand">
-
+      <ion-input placeholder="Honda" [(ngModel)]="carData.brand">
       </ion-input>
       <small color="danger" *ngIf="error.brand">{{error.brand['0']}}</small>
 
     </ion-item>
-    <p class="question">Search for your vehicle model number</p>
+    <p class="question">Năm sản xuất</p>
     <ion-item>
-      <ion-input placeholder="What are you driving?" [(ngModel)]="carData.model">
+      <ion-input placeholder="2015" [(ngModel)]="carData.model">
 
       </ion-input>
       <small color="danger" *ngIf="error.model">{{error.model['0']}}</small>
     </ion-item>
-    <p class="question second">What is your vehicle number?</p>
+    <p class="question second">Biển số xe</p>
     <ion-item>
-      <ion-input placeholder="What are you driving?" [(ngModel)]="carData.vehicle_no">
-
-
+      <ion-input placeholder="30E112345" [(ngModel)]="carData.vehicle_no">
       </ion-input>
       <small color="danger" *ngIf="error.vehicle_no">{{error.vehicle_no['0']}}</small>
     </ion-item>
@@ -38,6 +35,6 @@
 </ion-content>
 <ion-footer>
   <ion-button class="otp_btn" (click)="saveData()">
-    Add
+    Thêm
   </ion-button>
 </ion-footer>

@@ -4,13 +4,14 @@
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
     <ion-title>
-      <span>O</span>nePark
+      <img style="width: 100px;margin-top: 10px" src="assets/image/name_logo.png">
+<!--      <span>O</span>nePark-->
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-searchbar clearIcon="string" placeholder="Search..." [(ngModel)]="search"></ion-searchbar>
+  <ion-searchbar clearIcon="string" placeholder="Tìm kiếm..." [(ngModel)]="search"></ion-searchbar>
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content>
 
@@ -52,7 +53,7 @@
       </div>
     </div>
     <div *ngIf="currantBooking.length < 1 ">
-      <h3 style="text-align: center;color: #7f97b1;">Không tìm thấy đặt trước Currant :( </h3>
+<!--      <h3 style="text-align: center;color: #7f97b1;">Không tìm thấy đặt trước:( </h3>-->
     </div>
     <p class="current">Lịch sử</p>
     <div class="card_div" *ngFor="let item of oldBooking |filter:search">
@@ -96,7 +97,7 @@
     </div>
 
     <div *ngIf="oldBooking.length < 1 ">
-      <h3 style="text-align: center;color: #7f97b1;">No Booking Found :( </h3>
+      <h3 style="text-align: center;color: #7f97b1;">Không tìm thấy đặt chỗ :( </h3>
     </div>
   </div>
 </ion-content>

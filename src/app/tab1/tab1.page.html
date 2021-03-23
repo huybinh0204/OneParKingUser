@@ -1,7 +1,8 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-title>
-      <span>O</span>nePark
+      <img style="width: 100px;margin-top: 10px" src="assets/image/name_logo.png">
+<!--      <span>O</span>nePark-->
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,25 +11,23 @@
 
   <div #map id="map"></div>
   <div class="first_div">
-    <ion-searchbar [(ngModel)]="search" placeholder="Search Parking.." (ionInput)="getItems($event)">
+    <ion-searchbar [(ngModel)]="search" placeholder="Tìm kiếm..." (ionInput)="getItems($event)">
     </ion-searchbar>
     <div class="remain_div" *ngIf="shawTimer">
-      <h3 class="text">Remaining Time</h3>
+      <h3 class="text">Thời gian</h3>
+<!--      <h3 class="text">Remaining Time</h3>-->
       <p class="timer_p"> {{timer?.timeDisp}}</p>
     </div>
     <ion-list *ngIf="isItemAvailable &&  search" class="searchBar">
       <ion-list-header>
-        <ion-label class="recent">Parking Space</ion-label>
+        <ion-label class="recent">Chỗ đậu xe</ion-label>
       </ion-list-header>
       <ion-item *ngFor="let item of space |filter:search" lines="none" class="serch_item"
         (click)="bookMyParking(item.id)">
-
         <ion-icon src="assets/icon-image/clock-circular-outline.svg">
-
         </ion-icon>
         <ion-label>
-
-          <h3>{{ item?.title }} - ${{item.price_par_hour}} /hr</h3>
+          <h3>{{ item?.title }} - {{item.price_par_hour}} VNĐ/giờ</h3>
           <p class="place">{{item?.address}}</p>
         </ion-label>
       </ion-item>
@@ -38,7 +37,8 @@
       <ion-col class="first_col">
         <h3 class="tittle">Thời gian vào</h3>
         <!-- <p class="data">Nov 1, 10:00AM</p> -->
-        <ion-datetime [min]="sort_data.start_dateMin" displayFormat="MMM D, hh:mm a" placeholder="Nov 1, 10:00AM"
+        <ion-datetime [min]="sort_data.start_dateMin" displayFormat="MMM D, hh:mm a"
+                      placeholder="Nov 1, 10:00AM"
           [(ngModel)]="sort_data.start_date" (ionChange)="dateChanged()"></ion-datetime>
 
       </ion-col>
@@ -74,7 +74,7 @@
       </p>
       <p class="distance_p">
         <ion-icon src="assets/icon-image/car-blue.svg" class="pin_icon"></ion-icon>
-        {{item?.distance}} <span class="remain_span">to destination</span> <span class="ion-float-right">
+        {{item?.distance}} <span class="remain_span">Nơi đén</span> <span class="ion-float-right">
           <ion-icon name="star" [class]="item?.avg_rating >=1? 'icon_color hydrated':'ion_default hydrated'"></ion-icon>
           <ion-icon name="star" [class]="item?.avg_rating >=2 ? 'icon_color hydrated':'ion_default hydrated'">
           </ion-icon>

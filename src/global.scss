@@ -28,14 +28,14 @@
 
 
 .otp_btn{
-    --background:var(--ion-color-blue); 
+    --background:var(--ion-color-blue);
     --color:var(--ion-color-white);
     font-size: 16px;
-    font-family: 'Rubik_Medium';
+    //font-family: 'Rubik_Medium';
     height: 50px;
     --border-radius:0px;
     margin: 0px;
-    --background-activated:var(--ion-color-blue); 
+    --background-activated:var(--ion-color-blue);
     width: 100%;
     letter-spacing: 0.00em;
     text-transform: uppercase;
@@ -48,7 +48,7 @@
         --padding-start:none;
         font-size: 16px;
         --padding-end:none;
-        font-family: 'Rubik_Medium';
+        //font-family: 'Rubik_Medium';
         --background-activated: none;
         margin-right: 0px;
     }
@@ -56,7 +56,7 @@
         ion-toolbar{
             ion-title{
                 font-size: 18px;
-                font-family: 'Rubik_Medium';
+                //font-family: 'Rubik_Medium';
                color: var(--ion-color-darkblue);
                 position: absolute;
                 top: 0;
@@ -69,25 +69,25 @@
                     color: var(--ion-color-blue);
                 }
                 }
-              
-               
+
+
                 ion-buttons {
                     position: relative;
-                 
-                   
+
+
                     ion-button {
                         color: var(--ion-color-black)!important;
                     }
-                  
+
                 }
         }
-       
+
     }
     .searchbar-input.sc-ion-searchbar-md {
         -webkit-padding-start: 30px!important;
         padding-inline-start: 30px!important;
     }
-    
+
     .sc-ion-searchbar-md-h {
         padding-left: unset;
         padding-right: unset;
@@ -96,11 +96,11 @@
         -webkit-padding-end: 8px;
         padding-inline-end: 16px;
     }
-    
+
     .searchbar-input-container.sc-ion-searchbar-ios {
         contain: none;
     }
-    
+
     .searchbar-search-icon.sc-ion-searchbar-ios {
         margin-left: calc(50% - 60px);
         left: inherit;
@@ -112,7 +112,7 @@
         contain: strict;
         color: var(--ion-color-darkblue)!important;
     }
-    
+
     .searchbar-search-icon.sc-ion-searchbar-md {
         left: auto;
         top: 11px;
@@ -121,7 +121,7 @@
         height: 18px;
         color: var(--ion-color-darkblue)!important;
     }
-    
+
     .searchbar-input {
         padding-left: 10px;
         background: #FFF !important;
@@ -129,7 +129,7 @@
         height: 40px !important;
         max-width: 400px;
         font-size: 13px !important;
-        font-family: 'Rubik_Medium_I'!important;
+        //font-family: 'Rubik_Medium_I'!important;
         border: 1px solid transparent;
          color: var(--ion-color-darkblue)!important;
         box-shadow: 0px 2px 6px 0px rgba(52,150,255,0.16)!important;
@@ -139,7 +139,7 @@
             color: var(--ion-color-darkblue);
         }
     }
-  
+
 
     .mymodal{
         --height: 151px;
@@ -166,8 +166,8 @@
              left: inherit!important;
              right: 16px!important;
              transform-origin: right top!important;
-           
-            
+
+
           }
     }
 
@@ -175,7 +175,7 @@
         --background: var(--ion-color-blue)!important;
         border-radius: 10px 10px 0px 0px ;
       }
- 
+
       .picker-opt.picker-opt-selected, .picker-prefix, .picker-suffix {
         color: var(--ion-color-white,#FFFFFF);
     }
@@ -186,12 +186,12 @@
         color: var(--ion-color-picker);
     }
     .sc-ion-picker-md-h {
-       
+
         --border-color: var(--ion-item-border-color,var(--ion-color-blue,var(--ion-color-step-150,rgba(0,0,0,0.13))));
-       
+
     }
 
-/// info window 
+/// info window
 
     .gm-ui-hover-effect {
         display: none !important;
@@ -208,7 +208,7 @@
        padding: 0;
         display: block !important;
         border-radius: 16px;
-     }    
+     }
 
      /*style the paragraph tag*/
     //  .gm-style .gm-style-iw #google-popup p{
@@ -249,10 +249,10 @@
                 p{
                   margin: 0px;
                   font-size: 10px;
-                  font-family: 'Changa-Medium';
+                  //font-family: 'Changa-Medium';
                   color: var(--ion-color-white);
                 }
-              
+
               }
               .simple{
                 display:flex;
@@ -263,12 +263,12 @@
                 p{
                     margin: 0px;
                     font-size: 10px;
-                    font-family: 'Changa-Medium';
+                    //font-family: 'Changa-Medium';
                     color: var(--ion-color-white);
                   }
               }
-             
+
         }
-      
-          
+
+
     }

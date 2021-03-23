@@ -20,9 +20,18 @@ ion-content {
         }
 
         .signin {
-            font-size: 30px;
+            font-size: 25px;
             font-family: 'WorkSans_Bold';
             color: var(--ion-color-darkblue);
+        }
+        .titles {
+            font-size: 25px;
+            font-family: 'WorkSans_Bold';
+            color: var(--ion-color-darkblue);
+        }
+        .img {
+            width: 220px;
+            margin-top: 10px;
         }
 
 

@@ -3,14 +3,14 @@
     <ion-buttons>
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
-    <ion-title>Forgot Password</ion-title>
+    <ion-title>Quên mật khẩu</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-margin-horizontal main_div">
     <p class="ion-text-center">
-      Enter your email or phone and will send you instruction on how to reset it
+      Nhập email hoặc điện thoại của bạn và sẽ gửi cho bạn hướng dẫn về cách đặt lại
     </p>
 
 
@@ -18,40 +18,40 @@
       <ion-item class="dataitem " lines="none">
         <ion-icon src="assets/icon-image/email-icon.svg" class="icon_img">
         </ion-icon>
-        <ion-input placeholder="Email / Phone" [readonly]="userFind"></ion-input>
+        <ion-input placeholder="Email / Số điện thoại" [readonly]="userFind"></ion-input>
       </ion-item>
 
       <ion-grid class="ion-no-padding" *ngIf="step2">
         <ion-row>
           <ion-col size="6" class="ion-text-left ion-no-padding">
-            <ion-button (click)="editInformation()" color="danger" fill="clear" size="small">Edit Email / Number
+            <ion-button (click)="editInformation()" color="danger" fill="clear" size="small">Email / Số điện thoại
             </ion-button>
           </ion-col>
           <ion-col size="6" class="ion-text-right ion-no-padding">
-            <ion-button color="tertiary" fill="clear" size="small">Resend OTP</ion-button>
+            <ion-button color="tertiary" fill="clear" size="small">Gửi lại OTP</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
       <ion-button class="otp_btn ion-button" (click)="findUser()" *ngIf="step1 ">
-        Send
+        Gửi
       </ion-button>
 
       <ion-item class="dataitem " lines="none" *ngIf="step2">
         <ion-icon src="assets/icon-image/email-icon.svg" class="icon_img">
         </ion-icon>
-        <ion-input placeholder="Please enter OTP you received" [readonly]="userFind"></ion-input>
+        <ion-input placeholder="Vui lòng nhập mã OTP bạn" [readonly]="userFind"></ion-input>
       </ion-item>
       <ion-button class="otp_btn ion-button" (click)="verifyUser()" *ngIf="step2">
-        Verify
+        Kiểm tra
       </ion-button>
 
       <ion-item class="dataitem " lines="none" *ngIf="step3">
         <ion-icon src="assets/icon-image/email-icon.svg" class="icon_img">
         </ion-icon>
-        <ion-input placeholder="Enter new password" [readonly]="userFind" type="password"></ion-input>
+        <ion-input placeholder="Nhập mật khẩu mới" [readonly]="userFind" type="password"></ion-input>
       </ion-item>
       <ion-button class="otp_btn ion-button" (click)="changePassword()" *ngIf="step3">
-        Submit
+        Gửi
       </ion-button>
     </form>
   </div>

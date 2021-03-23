@@ -22,6 +22,7 @@ ion-content {
     right: 10px;
   }
 
+
   .first_div {
     position: absolute;
     top: 0;
@@ -36,7 +37,7 @@ ion-content {
 
       .text {
         font-size: 14px;
-        font-family: 'Rubik_Medium';
+        //font-family: 'Rubik_Medium';
         color: var(--ion-color-darkblue);
         text-transform: uppercase;
         margin-bottom: 0px;
@@ -45,7 +46,7 @@ ion-content {
       .timer_p {
         font-size: 30px;
         color: var(--ion-color-darkblue);
-        font-family: 'Changa-Medium';
+        //font-family: 'Changa-Medium';
         margin: 0px;
       }
     }
@@ -62,12 +63,12 @@ ion-content {
       ion-label {
         margin: 0px;
         font-size: 12px;
-        font-family: 'Rubik_Medium';
+        //font-family: 'Rubik_Medium';
         color: var(--ion-color-sky);
 
         .place {
           font-size: 10px;
-          font-family: 'Rubik_Regular';
+          //font-family: 'Rubik_Regular';
           color: var(--ion-color-sky);
         }
       }
@@ -75,7 +76,7 @@ ion-content {
 
     .recent {
       font-size: 14px;
-      font-family: 'Rubik_Medium';
+      //font-family: 'Rubik_Medium';
       color: var(--ion-color-darkblue);
     }
 
@@ -88,7 +89,7 @@ ion-content {
 
         .tittle {
           font-size: 14px;
-          font-family: 'Rubik_Medium';
+          //font-family: 'Rubik_Medium';
           color: var(--ion-color-darkblue);
           text-align: center;
           margin-bottom: 0px;
@@ -98,7 +99,7 @@ ion-content {
           text-align: center;
           padding-left: 0;
           font-size: 14px;
-          font-family: 'Rubik_Medium';
+          //font-family: 'Rubik_Medium';
           color: var(--ion-color-blue);
         }
       }
@@ -127,7 +128,7 @@ ion-content {
     top: 0;
     right: 0;
     font-size: 10px;
-    font-family: 'Rubik_Medium';
+    //font-family: 'Rubik_Medium';
     --color: var(--ion-color-blue);
     text-transform: capitalize;
     height: 16px;
@@ -138,13 +139,13 @@ ion-content {
 
     .name_p {
       font-size: 16px;
-      font-family: 'Rubik_Medium';
+      //font-family: 'Rubik_Medium';
       color: var(--ion-color-blue);
       margin-bottom: 7px;
 
       span {
         font-size: 10px;
-        font-family: 'Rubik_Medium';
+        //font-family: 'Rubik_Medium';
         color: var(--ion-color-darkblue);
         margin-top: 7px;
       }
@@ -152,7 +153,7 @@ ion-content {
 
     .adress_p {
       font-size: 12px;
-      font-family: 'Rubik_Medium';
+      //font-family: 'Rubik_Medium';
       color: var(--ion-color-darkblue);
       margin-top: 0px;
       margin-bottom: 8px;
@@ -165,13 +166,13 @@ ion-content {
 
     .distance_p {
       font-size: 12px;
-      font-family: 'Rubik_Medium';
+      //font-family: 'Rubik_Medium';
       color: var(--ion-color-darkblue);
       margin: 0px;
 
       .remain_span {
         color: var(--ion-color-checkb);
-        font-family: 'Rubik_Regular';
+        //font-family: 'Rubik_Regular';
       }
 
       span {
@@ -191,7 +192,7 @@ ion-content {
 
     .remain {
       font-size: 12px;
-      font-family: 'Rubik_Medium';
+      //font-family: 'Rubik_Medium';
       color: var(--ion-color-darkblue);
 
     }

@@ -7,7 +7,10 @@
 
 
     </ion-buttons>
-    <ion-title>OnePark</ion-title>
+    <ion-title>
+      <img style="width: 100px;margin-top: 10px" src="assets/image/name_logo.png">
+<!--      OnePark-->
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,11 +18,11 @@
 
   <ion-row>
     <ion-col class="first_col">
-      <h3 class="tittle">Arriving</h3>
+      <h3 class="tittle">Thời gian đến</h3>
       <p class="data">{{startTime | date:'MMM dd HH:mm' }}</p>
     </ion-col>
     <ion-col>
-      <h3 class="tittle">Leaving</h3>
+      <h3 class="tittle">Thời gian đi</h3>
       <p class="data">{{endTime | date:'MMM dd HH:mm' }}</p>
 
     </ion-col>
@@ -65,8 +68,8 @@
     </div>
     <div class="tridev">
       <div class="distance_div">
-        <h3 class="distance">{{hours}} hr</h3>
-        <p class="detail_p">Parking time</p>
+        <h3 class="distance">{{hours}} Giờ</h3>
+        <p class="detail_p">thời gian đỗ</p>
       </div>
       <div class="dot_div">
         <div class="dot">
@@ -75,7 +78,7 @@
       </div>
       <div class="distance_div">
         <h3 class="distance">{{spaceData.distance}} Km</h3>
-        <p class="detail_p">To Destination</p>
+        <p class="detail_p">Quảng đường</p>
       </div>
       <div class="dot_div">
         <div class="dot">
@@ -84,16 +87,16 @@
       </div>
       <div class="distance_div">
         <h3 class="distance">${{hours * spaceData.price_par_hour}}</h3>
-        <p class="detail_p">Total Price</p>
+        <p class="detail_p">Tổng tiền</p>
       </div>
     </div>
     <div class="segment_div">
       <ion-segment [(ngModel)]="category">
         <ion-segment-button checked value="information">
-          <ion-label>information</ion-label>
+          <ion-label>thông tin</ion-label>
         </ion-segment-button>
         <ion-segment-button value="review">
-          <ion-label>review</ion-label>
+          <ion-label>đánh giá</ion-label>
         </ion-segment-button>
 
       </ion-segment>
@@ -159,6 +162,7 @@
 </ion-content>
 <ion-footer>
   <ion-button class="otp_btn" (click)="bookingNavigation()">
-    Reserve Parking
+    Đặt chỗ đậu xe
+<!--    Reserve Parking-->
   </ion-button>
 </ion-footer>
