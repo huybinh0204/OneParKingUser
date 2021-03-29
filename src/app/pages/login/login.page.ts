@@ -33,12 +33,18 @@ export class LoginPage implements OnInit {
 
     async login() {
         this.api.startLoader();
-        const data = new FormData();
-        data.append('email', this.email);
-        data.append('password', this.password);
-        data.append('device_token', localStorage.getItem('pushToken'));
-        this.api.postWithAuth('login', data).subscribe((res: any) => {
+        // const data = new FormData();
+        // data.append('email', this.email);
+        // data.append('password', this.password);
+        // data.append('device_token', localStorage.getItem('pushToken'));
+        const datas  = {
+            email: 'binhlh@dcv.vn',
+            password: '123456'
+        };
+        // alert(JSON.stringify(datas));
+        this.api.postWithAuth('login', datas).subscribe((res: any) => {
             console.log('res', res);
+            // alert('OK vao');
             this.api.dismissLoader();
             if (res.success === true) {
                 console.log(res.msg);
@@ -52,6 +58,7 @@ export class LoginPage implements OnInit {
                 this.ntrl.navigateForward(['get-otp']);
             }
         }, err => {
+            // alert(JSON.stringify(err));
             this.api.dismissLoader();
             if (err.status === 401) {
                 console.log('err', err.statusText);

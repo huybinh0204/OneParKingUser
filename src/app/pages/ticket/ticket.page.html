@@ -19,16 +19,21 @@
                 <img src="assets/image/ticket.png">
             </div>
             <h3 class="status">
-                <ng-container *ngIf="bookingData?.payment_status == '0' ">
-                    Đang chờ thanh toán
+                <ng-container>
+                    <p> Nhãn hiệu: {{bookingData?.vehicle?.brand}}</p>
+                    <p> Biển số: {{bookingData?.vehicle?.vehicle_no}}</p>
                 </ng-container>
-                <ng-container *ngIf="bookingData?.payment_status == '1' ">
-                    Thanh toán thành công
-                </ng-container>
-                <ng-container *ngIf="bookingData?.payment_status == '2' ">
-                    Thanh toán bị từ chối
-                </ng-container>
+<!--                <ng-container *ngIf="bookingData?.payment_status == '0' ">-->
+<!--                    Đang chờ thanh toán-->
+<!--                </ng-container>-->
+<!--                <ng-container *ngIf="bookingData?.payment_status == '1' ">-->
+<!--                    Thanh toán thành công-->
+<!--                </ng-container>-->
+<!--                <ng-container *ngIf="bookingData?.payment_status == '2' ">-->
+<!--                    Thanh toán bị từ chối-->
+<!--                </ng-container>-->
             </h3>
+<!--            <p class="id">Năm: {{bookingData?.vehicle?.model}}. Biển số: {{bookingData?.vehicle?.vehicle_no}}</p>-->
             <p class="id">ID No. {{bookingData?.order_no}}</p>
             <ion-button shape="round" fill="outline" color="secondary" *ngIf="bookingData?.status == '0'">Đã đặt trước
             </ion-button>
@@ -43,26 +48,26 @@
                 <ion-col>
                     <h3 class="time">Thời gian dự kiến</h3>
                     <div>
-                        <p class="start time">Từ {{bookingData?.arriving_time |  date:'HH:mm dd-MM'}}</p>
-                        <p class="start time"> Đến {{bookingData?.leaving_time |  date:'HH:mm dd-MM'  }}</p>
+                        <p class="start time">Vào: {{bookingData?.arriving_time |  date:'HH:mm dd-MM'}}</p>
+                        <p class="start time"> Ra: {{bookingData?.leaving_time |  date:'HH:mm dd-MM'  }}</p>
                     </div>
                 </ion-col>
                 <ion-col>
                     <h3 class="time">Giá tiền</h3>
-                    <p class="start time">{{bookingData?.total_amount}} VNĐ</p>
+                    <p class="start time">{{bookingData?.total_amount}} Đ</p>
                 </ion-col>
             </ion-row>
             <ion-row *ngIf="bookingData.checked_in_at">
                 <ion-col>
                     <h3 class="time">Thời gian Thực tế</h3>
                     <div>
-                        <p class="start time">Từ {{bookingData?.checked_in_at |  date:'HH:mm dd-MM'}}</p>
-                        <p class="start time"> Đến {{bookingData?.checked_out_at |  date:'HH:mm dd-MM'  }}</p>
+                        <p class="start time">Vào: {{bookingData?.checked_in_at |  date:'HH:mm dd-MM'}}</p>
+                        <p class="start time">Ra: {{bookingData?.checked_out_at == null ? "chưa ra bãi  " : bookingData?.checked_out_at |  date:'HH:mm dd-MM'  }}</p>
                     </div>
                 </ion-col>
                 <ion-col>
                     <h3 class="time">Giá tiền</h3>
-                    <p class="start time">{{bookingData?.total_payment}} VNĐ</p>
+                    <p class="start time">{{bookingData?.total_payment == null ? 0 : bookingData?.total_payment}} Đ</p>
                 </ion-col>
 
             </ion-row>
@@ -97,6 +102,9 @@
                 <div class="bottom --flex-row-j!sb">
                     <h3 class="name">{{bookingData?.space?.title}}</h3>
                     <p class="adress">{{bookingData?.space?.address}}</p>
+
+<!--                    <h3 class="name">{{bookingData?.space?.title}}</h3>-->
+                    <p class="name">Khu vực: {{bookingData?.slots?.zone?.name}}. Vị trí đỗ: {{bookingData?.slots?.name}}</p>
                     <div class="div_img">
                         <img src="assets/image/right-arrow.png">
                     </div>

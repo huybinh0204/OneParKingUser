@@ -50,31 +50,41 @@ ion-content {
                 }
             }
         }
+        .ion-text-ca{
+            font-size: 14px;
+        }
 
         .success {
             border-top: 1px solid var(--ion-border-color);
-            padding-bottom: 10px;
-            padding-top: 10px;
+            //padding-bottom: 5px;
+            //padding-top: 5px;
 
-            .msg {
-                margin-left: 15px;
-                margin-right: 15px;
-                font-size: 12px;
-                //font-family: 'Rubik_Medium';
-                color: var(--ion-color-blue);
+
+            //.msg {
+                //margin-left: 15px;
+                //margin-right: 15px;
+                //font-size: 12px;
+                ////font-family: 'Rubik_Medium';
+                //color: var(--ion-color-blue);
 
                 ion-icon {
                     height: 17px;
-                    width: 17px;
+                    width: 100px;
                 }
 
                 .ion-button-s {
                     --color: var(--ion-color-green);
-                    font-size: 12px;
+                    font-size: 14px;
                     height: 15px;
                     margin-top: 0px;
                 }
-            }
+                .ion-button-n {
+                    --color: var(--ion-color-green);
+                    font-size: 14px;
+                    height: 15px;
+                    margin-top: 0px;
+                }
+            //}
         }
     }
 }

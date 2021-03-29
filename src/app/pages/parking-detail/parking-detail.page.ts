@@ -141,5 +141,12 @@ export class ParkingDetailPage implements OnInit {
   bookingNavigation() {
     this.ntrl.navigateForward('space-slot/' + this.spaceData.id);
   }
+  formatedEndDate(date: Date) {
+    const formatedMonth = date.getMonth() + 1 > 9 ? date.getMonth() + 1 : '0' + (date.getMonth() + 1);
+    const formatedDate = date.getDay() + 1 > 9 ? date.getDay() + 1 : '0' + (date.getDay() + 1);
+    const formatCol = date.getFullYear() + '-' + formatedMonth + '-' + formatedDate;
+    console.log('formatCol', formatCol);
+    return formatCol;
+  }
 
 }

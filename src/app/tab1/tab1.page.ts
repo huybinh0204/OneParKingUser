@@ -297,7 +297,7 @@ export class Tab1Page {
                         '<div class="simple">' +
                         '<p style = "margin: 0 5px 0 5px">' +
                         element.price_par_hour +
-                        'VNĐ/giờ</p>' +
+                        'Đ/giờ</p>' +
                         '</div>';
                     const markerInfo = new google.maps.InfoWindow({
                         content: spaceInfo
@@ -432,7 +432,11 @@ export class Tab1Page {
         }
     }
 
-    formatter(meny) {
+    formatCash(str) {
+        const a = String(str);
+        return a.split('').reverse().reduce((prev, next, index) => {
+            return ((index % 3) ? next : (next + ',')) + prev;
+        });
     }
 
     formatedEndDate(date: Date) {

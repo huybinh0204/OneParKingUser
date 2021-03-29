@@ -46,7 +46,7 @@
   </ion-segment>
   <ion-grid class="ion-no-padding">
     <ion-row>
-      <ion-col style="min-height: 100px;" size="12" class="ion-text-center" (click)="parkMyCar('entry',true)">
+      <ion-col style="min-height: 100px;" size="12" class="ion-text-center" (click)="parkMyCar('entry',true,null)">
         <img *ngIf="whereMyCar === 'entry'" src=" assets/car/myCar.png" alt="" srcset="" style="width: 12%;">
         <h2 *ngIf="whereMyCar !== 'entry'">Entry</h2>
       </ion-col>
@@ -59,36 +59,38 @@
       <ion-grid class="ion-padding" *ngSwitchCase="item.id">
         <ion-row>
           <ng-container *ngFor="let slot of item.slots;let i = index; let even = even; let odd = odd">
-            <ion-col size="5" class="ion-col-left ion-col-left-booked" (click)="parkMyCar(slot.id,slot.available)"
+            <ion-col size="5" class="ion-col-left ion-col-left-booked" (click)="parkMyCar(slot.id,slot.available,null)"
               *ngIf="even">
               <ng-container *ngIf="slot.booked == 1"> <img class="rotate-90" src="assets/car/red.png" alt="" srcset="">
-
+                <h2 class="red-color" *ngIf="whereMyCar !== slot.id && slot.available == true" [ngClass]="{'red-color': slot.available == true  }">{{slot.name}}</h2>
+                <img *ngIf="whereMyCar === slot.id " src="assets/car/myCar.png" alt="" srcset="" style="width: 35%;"
+                     class="rotate-90">
+                <img *ngIf="whereMyCar !== slot.id && slot.available == false" src="assets/car/red.png" alt="" srcset="" style="width: 35%;"
+                     class="rotate-90">
               </ng-container>
               <ng-container *ngIf="slot.booked != 1">
-                <h2 class="red-color" *ngIf="whereMyCar !== slot.id" [ngClass]="{'red-color': slot.available == false  }">{{slot.name}}</h2>
-                <img *ngIf="whereMyCar === slot.id" src=" assets/car/myCar.png" alt="" srcset="" style="width: 35%;"
+                <h2 class="red-color" *ngIf="whereMyCar !== slot.id && slot.available == true" [ngClass]="{'red-color': slot.available == false  }">{{slot.name}}</h2>
+                <img *ngIf="whereMyCar === slot.id" src="assets/car/myCar.png" alt="" srcset="" style="width: 35%;"
                   class="rotate-90">
+                <img *ngIf="whereMyCar !== slot.id && slot.available == false" src="assets/car/red.png" alt="" srcset="" style="width: 35%;"
+                     class="rotate-90">
               </ng-container>
-
-
-
-
             </ion-col>
             <ion-col size="2" *ngIf="even">
 
             </ion-col>
-            <ion-col size="5" class="ion-col-right ion-col-right-booked" (click)="parkMyCar(slot.id,slot.available)"
+            <ion-col size="5" class="ion-col-right ion-col-right-booked" (click)="parkMyCar(slot.id,slot.available,null)"
               *ngIf="odd">
               <!-- <h2>B1</h2> -->
               <ng-container *ngIf="slot.booked == 1"> <img class="rotate90" src="assets/car/red.png" alt="" srcset="">
-
               </ng-container>
               <ng-container *ngIf="slot.booked != 1">
-
-                <h2 *ngIf="whereMyCar !== slot.id" [ngClass]="{'disable': slot.available == false }">
+                <h2 *ngIf="whereMyCar !== slot.id && slot.available == true" [ngClass]="{'disable': slot.available == false }">
                   {{slot.name}}</h2>
                 <img *ngIf="whereMyCar === slot.id" src=" assets/car/myCar.png" alt="" srcset="" style="width: 35%;"
                   class="rotate90">
+                <img *ngIf="whereMyCar !== slot.id && slot.available == false" src="assets/car/red.png" alt="" srcset="" style="width: 35%;"
+                     class="rotate-90">
               </ng-container>
             </ion-col>
           </ng-container>
@@ -132,7 +134,6 @@
           class="rotate-90">
       </ion-col>
       <ion-col size="5" class="ion-col-left" (click)="parkMyCar('A5')">
-
         <h2 *ngIf="whereMyCar !== 'A5'">A5</h2>
         <img *ngIf="whereMyCar === 'A5'" src=" assets/car/myCar.png" alt="" srcset="" style="width: 35%;"
           class="rotate90">

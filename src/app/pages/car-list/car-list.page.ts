@@ -12,7 +12,7 @@ export class CarListPage implements OnInit {
   radio: any = 0;
   type: any = 'vehicle';
 
-  carData: any = []
+  carData: any = [];
   constructor(private modalController: ModalController, private ntrl: NavController, private api: ApiService) {
 
   }
@@ -24,18 +24,18 @@ export class CarListPage implements OnInit {
 
   }
   getUserVehicle() {
-    this.api.startLoader()
+    this.api.startLoader();
 
     this.api.authGetReq('vehicle').subscribe((res: any) => {
-      console.log('res', res)
+      console.log('res', res);
 
       this.carData = res.data;
-      this.api.dismissLoader()
+      this.api.dismissLoader();
     }, err => {
-      this.api.dismissLoader()
+      this.api.dismissLoader();
 
-      console.error('err', err)
-    })
+      console.error('err', err);
+    });
   }
   async presentModal(id, sliding) {
     const modal = await this.modalController.create({
@@ -48,7 +48,7 @@ export class CarListPage implements OnInit {
       }
     });
     modal.onDidDismiss().then(data => {
-      sliding.close()
+      sliding.close();
       console.log('dismissed', data);
       if (data.data && data.data.deleted === true) {
         this.getUserVehicle();
@@ -63,28 +63,28 @@ export class CarListPage implements OnInit {
     this.ntrl.back();
   }
   view() {
-    console.log("jjj");
+    console.log('jjj');
   }
   defaultCarChange(id) {
     const data = {
       default_vehicle: 1
-    }
-    this.api.startLoader()
+    };
+    this.api.startLoader();
 
     this.api.authUpdateReq('vehicle/' + id, data).subscribe((res: any) => {
-      console.log('res', res)
-      this.api.dismissLoader()
+      console.log('res', res);
+      this.api.dismissLoader();
       if (res.success === true) {
-        this.api.presentToast(res.msg)
+        this.api.presentToast(res.msg);
       }
     }, err => {
-      console.error('err', err)
-      this.api.dismissLoader()
-    })
-    console.log('id', id)
+      console.error('err', err);
+      this.api.dismissLoader();
+    });
+    console.log('id', id);
 
   }
   addCar() {
-    this.ntrl.navigateForward('select-car')
+    this.ntrl.navigateForward('select-car');
   }
 }

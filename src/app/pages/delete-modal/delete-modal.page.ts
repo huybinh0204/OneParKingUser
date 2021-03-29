@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import {ModalController, NavController} from '@ionic/angular';
 import { ApiService } from './../../service/api.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ApiService } from './../../service/api.service';
 export class DeleteModalPage implements OnInit {
   @Input() id: string;
   @Input() path: string;
-  constructor(private modelDismiss: ModalController, private api: ApiService) { }
+  constructor(private ntrl: NavController, private modelDismiss: ModalController, private api: ApiService) { }
 
   ngOnInit() {
   }
@@ -20,18 +20,25 @@ export class DeleteModalPage implements OnInit {
     });
   }
   deleteRecord() {
-    this.api.authDeleteReq(this.path + '/' + this.id).subscribe((res: any) => {
-      console.log('res', res)
+    this.api.startLoader();
+    this.ntrl.navigateForward(['car-list']);
+    this.modelDismiss.dismiss({
+      deleted: true
+    });
+    console.log('this.path', );
+    const data = {
+      id : this.id
+    };
+    this.api.authDeleteReqXe('delete/' + this.path, data).subscribe((res: any) => {
+      console.log('res', res);
       if (res.success === true) {
-        this.api.presentToast(res.msg)
+        // this.api.presentToast(res.msg);
         this.modelDismiss.dismiss({
           deleted: true
         });
-
       }
     }, err => {
-      console.log('err', err)
-
-    })
+      console.log('err', err);
+    });
   }
 }

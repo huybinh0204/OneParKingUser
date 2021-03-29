@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-space-slot',
@@ -22,13 +23,17 @@ export class SpaceSlotPage implements OnInit {
     private ntrl: NavController
   ) {
     this.api.startLoader();
-
-    const startTime = api.startTime || new Date();
-    const endTime = api.endTime || new Date();
-
+    // const startTime = api.startTime || new Date();
+    // const endTime = api.endTime || new Date();
     this.id = this.activeRoute.snapshot.paramMap.get('id');
-    this.api
-      .authPostReq(`space/${this.id}/zone`, { startTime, endTime })
+    const format = 'yyyy-MM-dd HH:mm:ss';
+    const locale = 'en-US';
+    const data = {
+      startTime: formatDate( api.startTime, format, locale),
+      endTime: formatDate( api.endTime, format, locale),
+    };
+    console.log('datastartTime', data);
+    this.api.authPostReq(`space/${this.id}/zone`, data)
       .subscribe(
         (res: any) => {
           console.log('res', res);

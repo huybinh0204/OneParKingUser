@@ -27,7 +27,7 @@
         <ion-icon src="assets/icon-image/clock-circular-outline.svg">
         </ion-icon>
         <ion-label>
-          <h3>{{ item?.title }} - {{item.price_par_hour}} VNĐ/giờ</h3>
+          <h3>{{ item?.title }} - {{formatCash(item.price_par_hour)}} Đ/giờ</h3>
           <p class="place">{{item?.address}}</p>
         </ion-label>
       </ion-item>
