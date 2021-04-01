@@ -33,37 +33,25 @@
         </p>
       </div>
       <div class="success">
-<!--        <p class="msg">-->
-<!--          <ng-container *ngIf="item?.payment_status == '0' ">-->
-<!--            Đang chờ thanh toán-->
-<!--          </ng-container>-->
-<!--          <ng-container *ngIf="item?.payment_status == '1' ">-->
-<!--            Thanh toán thành công-->
-<!--          </ng-container>-->
-<!--          <ng-container *ngIf="item?.payment_status == '2' ">-->
-<!--            Thanh toán bị từ chối-->
-<!--          </ng-container>-->
-<!--        </p>-->
         <ion-button *ngIf="item?.status == 1" class="ion-text-capitalize ion-text-ca " color="primary" fill="outline" expand="full">
           Đã checkin
         </ion-button>
-        <ion-button *ngIf="item?.status == 0" class="ion-text-capitalize ion-text-ca" color="danger" fill="outline" expand="full"
-                    (click)="cancelBooking(item.id)">
+        <ion-button *ngIf="item?.status == 0" class="ion-text-capitalize ion-text-ca" color="danger" fill="outline" expand="full" (click)="cancelBooking(item.id)">
           Huỷ bỏ
         </ion-button>
       </div>
     </div>
     <div *ngIf="currantBooking.length < 1 ">
-<!--      <h3 style="text-align: center;color: #7f97b1;">Không tìm thấy đặt trước:( </h3>-->
+      <h3 style="text-align: center;color: #7f97b1;font-size: 15px">Không tìm thấy vé đặt trước</h3>
     </div>
     <p class="current" style="font-size: 25px">Lịch sử.</p>
     <div class="card_div" *ngFor="let item of oldBooking |filter:search">
       <div class="info_div" (click)="openBooking(item.id)">
         <p class="name">{{item?.space?.title}} <span class="ion-float-right"> {{item?.created_at | date:'dd-MM-yyyy'  }}</span></p>
-        <p class="id">
+        <p class="id" style="color: #0c0c0c">
           <ion-icon src="assets/icon-image/id-icon.svg"></ion-icon>ID No.{{item?.order_no}}
         </p>
-        <p class="time">
+        <p class="time" style="color: #0c0c0c">
           <ion-icon src="assets/icon-image/clock-img.svg"></ion-icon>
           {{item?.arriving_time | date:'dd-MM-yyyy'  }} To
           {{item?.leaving_time | date:'dd-MM-yyyy'  }}
@@ -100,7 +88,7 @@
     </div>
 
     <div *ngIf="oldBooking.length < 1 ">
-      <h3 style="text-align: center;color: #7f97b1;">Không tìm thấy đặt chỗ :( </h3>
+      <h3 style="text-align: center;color: #7f97b1;font-size: 15px">Không tìm thấy lịch sử.</h3>
     </div>
   </div>
 </ion-content>

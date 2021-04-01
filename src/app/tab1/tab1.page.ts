@@ -44,6 +44,12 @@ export class Tab1Page {
         remainingTime: 500,
         timeDisp: '0 : 0'
     };
+    formatCash(str) {
+        const a = String(str);
+        return a.split('').reverse().reduce((prev, next, index) => {
+            return ((index % 3) ? next : (next + ',')) + prev;
+        });
+    }
 
     async ionViewDidEnter() {
 
@@ -221,7 +227,7 @@ export class Tab1Page {
             {name: 'Styled Map'}
         );
         const mapoption = {
-            center: new google.maps.LatLng(-33.86882, 151.20929),
+            center: new google.maps.LatLng(this.lat, this.lng),
             zoom: 15,
             streetViewControl: false,
             disableDefaultUI: true,
@@ -285,6 +291,14 @@ export class Tab1Page {
             (res: any) => {
                 console.log('res', res);
                 this.space = res.data;
+
+                function formatCashs(strn: any) {
+                    const a = String(strn);
+                    return a.split('').reverse().reduce((prev, next, index) => {
+                        return ((index % 3) ? next : (next + ',')) + prev;
+                    });
+                }
+
                 for (let index = 0; index < res.data.length; index++) {
                     const element = this.space[index];
                     const firstMarker = new google.maps.Marker({
@@ -296,7 +310,7 @@ export class Tab1Page {
                     const spaceInfo =
                         '<div class="simple">' +
                         '<p style = "margin: 0 5px 0 5px">' +
-                        element.price_par_hour +
+                        formatCashs(element.price_par_hour) +
                         'Đ/giờ</p>' +
                         '</div>';
                     const markerInfo = new google.maps.InfoWindow({
@@ -331,6 +345,8 @@ export class Tab1Page {
 
     }
 
+
+    // tslint:disable-next-line:use-lifecycle-interface
     async ngOnInit() {
 
     }
@@ -432,12 +448,7 @@ export class Tab1Page {
         }
     }
 
-    formatCash(str) {
-        const a = String(str);
-        return a.split('').reverse().reduce((prev, next, index) => {
-            return ((index % 3) ? next : (next + ',')) + prev;
-        });
-    }
+
 
     formatedEndDate(date: Date) {
         const formatedMonth = date.getMonth() + 1 > 9 ? date.getMonth() + 1 : '0' + (date.getMonth() + 1);

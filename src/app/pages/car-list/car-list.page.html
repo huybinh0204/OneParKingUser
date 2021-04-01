@@ -22,7 +22,7 @@
     </ion-segment>
     <div [ngSwitch]="type">
       <div *ngSwitchCase="'vehicle'" class="vehicle_div">
-        <p class="first_p">Bạn sẽ đỗ phương tiện nào?</p>
+        <p class="first_p">Danh sách xe của bạn.</p>
         <ion-radio-group>
 
           <ion-item-sliding *ngFor="let item of carData" #slidingItem>

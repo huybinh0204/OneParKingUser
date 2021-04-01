@@ -64,8 +64,12 @@
         </ng-container>
       </ion-label>
       <ion-select [(ngModel)]="selectedVehicle" okText="Ok" cancelText="Huy"
-        (ionChange)="getDefaultVehicleById()">
+        (ionChange)="getDefaultVehicleById()" *ngIf="vehicle.length > 0">
         <ion-select-option [value]="item.id" *ngFor="let item of vehicle">{{item.vehicle_no + " " + item.brand }}</ion-select-option>
+      </ion-select>
+      <ion-select [(ngModel)]="selectedVehicle" okText="Ok" cancelText="Huy"
+                  (ionChange)="getDefaultVehicleById()" *ngIf="vehicle.length <= 0">
+        <ion-select-option >Vui long thêm mới phương tiện.</ion-select-option>
       </ion-select>
     </ion-item>
 

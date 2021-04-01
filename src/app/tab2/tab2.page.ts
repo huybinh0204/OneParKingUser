@@ -82,10 +82,9 @@ export class Tab2Page {
   }
   init() {
     this.api.startLoader();
-
     this.api.authGetReq('booking').subscribe(
       (res: any) => {
-        console.log('res', res);
+        console.log('resbbbb', res);
         this.oldBooking = res.data.old;
         this.currantBooking = res.data.currant;
         this.api.dismissLoader();
@@ -101,11 +100,10 @@ export class Tab2Page {
   }
   cancelBooking(id) {
     this.api.startLoader();
-
     console.log('id', id);
     this.api.authGetReq('booking/cancel/' + id).subscribe(
       (res: any) => {
-        console.log('res', res);
+        console.log('ressss', res);
         if (res.success === true) {
           this.api.presentToast(res.msg);
           this.ntrl.navigateForward(['tabs/mybooking']);

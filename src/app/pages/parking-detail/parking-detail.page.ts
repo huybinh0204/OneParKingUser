@@ -75,6 +75,9 @@ export class ParkingDetailPage implements OnInit {
   spaceData: any = {
 
   };
+  spaceDatasd: any = {
+
+  };
   id: string;
   startTime: any;
   endTime: any;
@@ -128,6 +131,10 @@ export class ParkingDetailPage implements OnInit {
     this.api.postWithAuth(`space/${this.id}`, latLng).subscribe((res: any) => {
       console.log('res', res);
       this.spaceData = res.data;
+      // tslint:disable-next-line:variable-name
+      const price_hour = res.data.price_par_hour * this.hours;
+      this.spaceDatasd = price_hour ;
+      console.log(this.spaceDatasd);
       this.api.dismissLoader();
 
     }, err => {
@@ -140,6 +147,12 @@ export class ParkingDetailPage implements OnInit {
 
   bookingNavigation() {
     this.ntrl.navigateForward('space-slot/' + this.spaceData.id);
+  }
+  formatCash(str) {
+    const a = String(str);
+    return a.split('').reverse().reduce((prev, next, index) => {
+      return ((index % 3) ? next : (next + ',')) + prev;
+    });
   }
   formatedEndDate(date: Date) {
     const formatedMonth = date.getMonth() + 1 > 9 ? date.getMonth() + 1 : '0' + (date.getMonth() + 1);

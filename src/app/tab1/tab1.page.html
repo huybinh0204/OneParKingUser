@@ -67,14 +67,14 @@
       View All
     </ion-button>
     <div class="data_div" *ngFor="let item of space.reverse()" (click)="bookMyParking(item.id)">
-      <h3 class="name_p">{{item?.title}} <span class="ion-float-right">${{item.price_par_hour}}</span></h3>
+      <h3 class="name_p">{{item?.title}} <span class="ion-float-right">{{formatCash(item.price_par_hour)}} Đ</span></h3>
       <p class="adress_p">
         <ion-icon src="assets/icon-image/pin-blue.svg" class="pin_icon"></ion-icon>
         {{item?.address}}
       </p>
       <p class="distance_p">
         <ion-icon src="assets/icon-image/car-blue.svg" class="pin_icon"></ion-icon>
-        {{item?.distance}} <span class="remain_span">Nơi đén</span> <span class="ion-float-right">
+        {{item?.distance}} <span class="remain_span">Nơi đến</span> <span class="ion-float-right">
           <ion-icon name="star" [class]="item?.avg_rating >=1? 'icon_color hydrated':'ion_default hydrated'"></ion-icon>
           <ion-icon name="star" [class]="item?.avg_rating >=2 ? 'icon_color hydrated':'ion_default hydrated'">
           </ion-icon>
